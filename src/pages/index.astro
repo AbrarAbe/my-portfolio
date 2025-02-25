@@ -1,14 +1,36 @@
 ---
-import "../styles/global.css";
+// src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
+import { createClient } from "contentful";
 
-const title = "Astro + TailwindCSS";
+const client = createClient({
+  space: import.meta.env.CONTENTFUL_SPACE_ID,
+  accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN,
+});
+
+const entries = await client.getEntries({
+  content_type: "project", //  'project' content type ID
+  order: ["-sys.createdAt"], // Order by creation date (newest first)
+});
+
+const projects = entries.items;
 ---
 
-<Layout title={title}>
-  <div class="flex flex-col items-center justify-center min-h-screen py-2">
-    <h1 class="text-5xl font-bold text-center text-gray-700">
-      {title}
-    </h1>
-  </div>
+<Layout title="My Portfolio">
+  <h1 class="text-3xl font-bold mb-6">Projects</h1>
+
+  <ul class="grid gap-4">
+    {
+      projects.map((project) => (
+        <li class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+          <a href={`/projects/${project.fields.slug}`}>
+            <h2 class="text-xl font-semibold">{project.fields.title}</h2>
+          </a>
+          <p class="text-gray-600 dark:text-gray-400">
+            {project.fields.shortDescription}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>
