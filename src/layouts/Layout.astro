@@ -5,10 +5,10 @@ interface Props {
 const { title } = Astro.props;
 import About from "../components/About.astro";
 import ContactMe from "../components/ContactMe.astro";
+import DownloadCV from "../components/DownloadCV.astro";
 import Education from "../components/Education.astro";
 import Experience from "../components/Experience.astro";
 import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import Metadata from "../components/Metadata.astro";
 import Profile from "../components/Profile.astro";
 import Projects from "../components/Projects.astro";
@@ -26,7 +26,14 @@ import "../styles/global.css";
       <div class="w-full max-w-2xl mx-auto pt-10 md:pt-16 px-4 sm:px-6 lg:px-8">
         <Profile />
         <About />
-        <Socials />
+        <div class="flex gap-[20px] flex-wrap">
+          <div class="grow">
+            <Socials />
+          </div>
+          <div class="mt-5">
+            <DownloadCV />
+          </div>
+        </div>
         <Projects />
         <Skills />
         <Experience />
@@ -35,6 +42,6 @@ import "../styles/global.css";
       </div>
     </main>
     <Footer />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/preline/dist/index.js"></script> -->
+    <script src="/src/scripts/scripts.js"></script>
   </body>
 </html>
