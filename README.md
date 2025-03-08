@@ -1,15 +1,5 @@
-# My Portfolio - Powered by Astro, Tailwind CSS and Headless CMS
-[![Open in StackBlitz(https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+# My Portfolio - Powered by Astro, Tailwind CSS and Headless CMS(soon)
 
 This portfolio website is built using [Astro](https://astro.build/) and styled with [Tailwind CSS](https://tailwindcss.com/).
 
-Get started:
-
-```sh
-pnpm create astro@latest -- --template with-tailwindcss
-# or
-npx create-astro@latest -- --template with-tailwindcss
-# or
-yarn create astro --template with-tailwindcss
+![Screenshot 2025-03-08 at 16-34-21 Abrar's Portfolio](https://github.com/user-attachments/assets/fe5a6e14-43be-467e-95a3-98af66b6bf3d)
