@@ -1,8 +1,4 @@
 ---
-interface Props {
-  title: string;
-}
-const { title } = Astro.props;
 import About from "../components/About.astro";
 import ContactMe from "../components/ContactMe.astro";
 import DownloadCV from "../components/DownloadCV.astro";
@@ -15,11 +11,13 @@ import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import Socials from "../components/Socials.astro";
 import "../styles/global.css";
+
+const { title, siteIcon } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <Metadata title={title} />
+  <Metadata title={title} , siteIcon={siteIcon} />
   <body class="bg-slate-50">
     <!-- <Header /> -->
     <main id="content">
