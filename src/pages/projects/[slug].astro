@@ -1,0 +1,111 @@
+---
+import { contentfulClient } from "../../lib/contentful";
+import type { Project } from "../../lib/contentful";
+import { remark } from "remark";
+import html from "remark-html";
+import ProjectsLayout from "../../layouts/ProjectsLayout.astro";
+import GithubRepoButton from "../../components/projects/GithubRepoButton.astro";
+import LiveDemoButton from "../../components/projects/LiveDemoButton.astro";
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<Project>({
+    content_type: "project",
+  });
+
+  return entries.items.map((item) => ({
+    params: { slug: item.fields.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const entries = await contentfulClient.getEntries<Project>({
+  content_type: "project",
+  "fields.slug": slug,
+});
+
+const project = entries.items[0];
+
+if (!project) {
+  return Astro.redirect("/404");
+}
+
+const {
+  title,
+  description,
+  featuredImage,
+  technologies,
+  liveLink,
+  githubLink,
+  shortDescription,
+} = project.fields;
+
+let imageUrl = "https://via.placeholder.com/150";
+if (featuredImage) {
+  try {
+    const asset = await contentfulClient.getAsset(featuredImage.sys.id);
+    imageUrl = asset?.fields?.file?.url || imageUrl;
+  } catch (error) {
+    console.error("Error fetching asset:", error);
+  }
+}
+
+let liveDemoLink = null;
+if (liveLink) {
+  try {
+    const response = await fetch(liveLink);
+    if (response.ok) {
+      liveDemoLink = liveLink;
+    } else {
+      console.error(
+        `Error fetching live link: ${response.status} ${response.statusText}`
+      );
+    }
+  } catch (error) {
+    console.error("No Live Demo Available");
+  }
+}
+const processedContent = await remark()
+  .use(html)
+  .process(description || "");
+
+const contentHtml = processedContent.toString();
+---
+
+<ProjectsLayout title={title}>
+  <h1 class="flex justify-center mb-5 font-medium text-3xl text-black">
+    {title}
+  </h1>
+  <p>{shortDescription}</p>
+  <div class="mb-5 text-sm text-gray-900" set:html={contentHtml} />
+
+  <div class="flex gap-[20px] flex-wrap mb-5">
+    <div class="grow">
+      <ul class="flex flex-wrap gap-2">
+        {
+          technologies?.map((tech) => (
+            <li class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+              {tech}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <GithubRepoButton githubRepoUrl={githubLink} />
+    </div>
+  </div>
+
+  <h1 class="flex justify-center mb-5 font-medium text-1xl text-black">
+    Preview
+  </h1>
+
+  <img
+    src={imageUrl}
+    class="flex justify-center max-w-md h-auto mb-5 mx-auto"
+    alt={title}
+  />
+
+  <div class="flex justify-center mb-5">
+    {liveLink && <LiveDemoButton liveDemoLink={liveLink} />}
+  </div>
+</ProjectsLayout>

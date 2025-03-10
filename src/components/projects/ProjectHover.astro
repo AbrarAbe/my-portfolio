@@ -1,0 +1,38 @@
+---
+const { title } = Astro.props;
+---
+
+<div
+  class="absolute bottom-0 w-full transition lg:opacity-0 lg:group-hover:opacity-100"
+>
+  <div
+    class="flex items-center bg-gradient-to-b from-gray-300/10 to-neutral-900/100 px-2 pb-2 pt-12 text-white text-sm"
+  >
+    {title}
+  </div>
+</div>
+
+<div
+  class="absolute bottom-1 end-1 transition opacity-0 group-hover:opacity-100"
+>
+  <div
+    class="flex items-center gap-x-1 rounded-lg border border-gray-200 bg-white py-1 px-2 text-black"
+  >
+    <svg
+      class="size-3 shrink-0"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </svg>
+    <span class="text-xs">View</span>
+  </div>
+</div>
