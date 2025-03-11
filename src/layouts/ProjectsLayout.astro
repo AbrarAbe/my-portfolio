@@ -8,9 +8,9 @@ const { title, siteIcon } = Astro.props;
 
 <html lang="en">
   <Metadata title={title} , siteIcon={siteIcon} />
-  <body class="bg-slate-50">
+  <body class="bg-slate-50 min-h-screen flex flex-col">
     <!-- <Header /> -->
-    <main id="content" class="mb-1s0">
+    <main id="content" class="flex-grow">
       <div class="w-full max-w-2xl mx-auto pt-10 md:pt-16 px-4 sm:px-6 lg:px-8">
         <slot />
       </div>
