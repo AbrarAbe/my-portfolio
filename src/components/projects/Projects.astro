@@ -33,12 +33,10 @@ const projects = await Promise.all(
 const BASE_URL = import.meta.env.BASE_URL;
 ---
 
-<h2 class="mb-5 font-medium text-black rounded-lg">Projects</h2>
-
 <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
   {
     projects.map((project) => (
-      <div class="group relative block rounded-lg">
+      <div class="group relative block rounded-lg overflow-hidden fade-in">
         <a href={`${BASE_URL}/projects/${project.slug}`} class="w-full h-full">
           <img
             class="size-40 w-full object-cover rounded-lg bg-gray-100 transition-transform duration-200 transform group-hover:scale-105"

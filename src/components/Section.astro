@@ -1,0 +1,9 @@
+---
+const { title } = Astro.props;
+import Card from "./Card.astro";
+---
+
+<Card>
+  {title && <h2 class="text-lg font-bold mb-4">{title}</h2>}
+  <slot />
+</Card>
