@@ -17,29 +17,62 @@ const { title, siteIcon } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <Metadata title={title} , siteIcon={siteIcon} />
+  <Metadata title={title} siteIcon={siteIcon} />
   <body class="bg-slate-50 min-h-screen flex flex-col">
     <!-- <Header /> -->
     <main id="content">
-      <div class="w-full max-w-2xl mx-auto pt-10 md:pt-16 px-4 sm:px-6 lg:px-8">
-        <Profile />
-        <About />
-        <div class="flex gap-[20px] flex-wrap">
-          <div class="grow">
-            <Socials />
+      <div class="w-full max-w-3xl mx-auto pt-10 md:pt-12 px-4 sm:px-6 lg:px-8">
+        <section
+          class="pt-10 md:pt-0 xl:h-auto md:flex md:items-center md:justify-center transition-transform duration-300 ease-in-out flex-col translate-y-[-50px]"
+          id="profile-container"
+        >
+          <div
+            class="flex flex-col sm:items-center sm:justify-center sm:min-h-screen"
+          >
+            <div class="bg-white flex flex-col shadow-xl rounded-lg p-5">
+              <Profile />
+              <About />
+              <div class="flex gap-[20px] flex-wrap justify-center">
+                <div class="grow">
+                  <Socials />
+                </div>
+                <div class="mt-5">
+                  <DownloadCV />
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="mt-5">
-            <DownloadCV />
+        </section>
+        <section class="bg-white">
+          <div
+            class="bg-white flex flex-col shadow-xl rounded-lg p-5 mb-3 overflow-hidden fade-in"
+          >
+            <Projects />
           </div>
-        </div>
-        <Projects />
-        <Skills />
-        <Experience />
-        <Education />
-        <ContactMe />
+          <div
+            class="bg-white flex flex-col shadow-xl rounded-lg p-5 mb-3 overflow-hidden fade-in"
+          >
+            <Skills />
+          </div>
+          <div
+            class="bg-white flex flex-col shadow-xl rounded-lg p-5 mb-3 overflow-hidden fade-in"
+          >
+            <Experience />
+          </div>
+          <div
+            class="bg-white flex flex-col shadow-xl rounded-lg p-5 mb-3 overflow-hidden fade-in"
+          >
+            <Education />
+          </div>
+          <div
+            class="bg-white flex flex-col shadow-xl rounded-lg p-5 mb-3 overflow-hidden fade-in"
+          >
+            <ContactMe />
+          </div>
+        </section>
       </div>
+      <Footer />
+      <script src="/src/scripts/scripts.js"></script>
     </main>
-    <Footer />
-    <script src="/src/scripts/scripts.js"></script>
   </body>
 </html>

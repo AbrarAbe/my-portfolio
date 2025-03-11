@@ -3,48 +3,20 @@ const email = "abrar.abe01@gmail.com";
 ---
 
 <!-- Contact Me -->
-<div class="my-10 sm:my-14 fade-in">
-  <h2 class="mb-5 font-medium text-gray-800">Contact Me</h2>
+<h2 class="mb-5 font-medium text-gray-800 fade-in">Contact Me</h2>
 
-  <!-- Input -->
-  <form>
-    <div
-      class="p-1.5 flex flex-col sm:flex-row items-center gap-2 border border-gray-200 rounded-lg"
-    >
-      <div class="relative w-full">
-        <label for="hero-input" class="sr-only">Email</label>
-        <div
-          class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3"
-        >
-          <svg
-            class="shrink-0 size-4 text-gray-400"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-          </svg>
-        </div>
-        <p
-          class="text-gray-500 py-1.5 sm:py-2 ps-9 pe-3 block w-full border-transparent rounded-lg sm:text-sm"
-        >
-          {email}
-        </p>
-      </div>
-      <a
-        class="w-full sm:w-auto whitespace-nowrap py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-        href={email}
+<!-- Input -->
+<form>
+  <div
+    class="p-1.5 flex flex-col sm:flex-row items-center gap-2 border border-gray-200 shadow-md rounded-lg fade-in"
+  >
+    <div class="relative w-full">
+      <label for="hero-input" class="sr-only">Email</label>
+      <div
+        class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3"
       >
-        Send Email
         <svg
-          class="shrink-0 size-3.5"
+          class="shrink-0 size-4 text-gray-400"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -55,17 +27,43 @@ const email = "abrar.abe01@gmail.com";
           stroke-linecap="round"
           stroke-linejoin="round"
         >
-          <path
-            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-          ></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
         </svg>
-      </a>
+      </div>
+      <p
+        class="text-gray-500 py-1.5 sm:py-2 ps-9 pe-3 block w-full border-transparent rounded-lg sm:text-sm"
+      >
+        {email}
+      </p>
     </div>
-    <p class="mt-2 text-xs text-gray-500">
-      I'll get back to you as soon as possible.
-    </p>
-  </form>
-  <!-- End Input -->
-</div>
+    <a
+      class="w-full sm:w-auto whitespace-nowrap py-2 px-2.5 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+      href={email}
+    >
+      Send Email
+      <svg
+        class="shrink-0 size-3.5"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+        ></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+    </a>
+  </div>
+  <p class="mt-2 text-xs text-gray-500 fade-in">
+    I'll get back to you as soon as possible.
+  </p>
+</form>
+<!-- End Input -->
 <!-- End Contact Me -->
