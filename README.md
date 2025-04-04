@@ -8,5 +8,8 @@ Integrated with [Contelful CMS](https://contentful.com) for project list updates
 ## Preview
 ![Screenshot 2025-03-12 at 10-54-04 Abrar's Portfolio_upscayl_2x_upscayl-standard-4x](https://github.com/user-attachments/assets/2ad86a3d-c771-41c9-8aa9-4db141e545be)
 
-## Github Stats
+## Contribution Stats
 ![Alt](https://repobeats.axiom.co/api/embed/cc8ae5e7a81370d04f51a97181ce5cb16ea4814b.svg "Repobeats analytics image")
+
+## License
+This project is open-source and is distributed under the [MIT License](LICENSE). See the `LICENSE` file for details.
