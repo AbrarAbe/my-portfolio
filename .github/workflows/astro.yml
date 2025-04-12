@@ -2,9 +2,12 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
+  # Add the repository_dispatch trigger for Contentful webhooks
+  repository_dispatch:
+    types: [contentful-update]
 
 # Allow this job to clone the repo and create a page deployment
 permissions:
