@@ -2,6 +2,7 @@
 import About from "../components/About.astro";
 import ContactMe from "../components/ContactMe.astro";
 import DownloadCV from "../components/DownloadCV.astro";
+import Certificates from "../components/Certificates.astro";
 import Education from "../components/Education.astro";
 import Experience from "../components/Experience.astro";
 import Footer from "../components/Footer.astro";
@@ -41,7 +42,10 @@ const { title, siteIcon } = Astro.props;
                   <Socials />
                 </div>
                 <div class="mt-3 sm:mt-5">
-                  <DownloadCV />
+                    <div class="flex flex-col gap-2">
+                      <DownloadCV />
+                      <Certificates />
+                    </div>
                 </div>
               </div>
             </div>
