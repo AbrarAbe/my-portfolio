@@ -1,18 +1,17 @@
 ---
 import About from "../components/About.astro";
+import Certificates from "../components/Certificates.astro";
 import ContactMe from "../components/ContactMe.astro";
 import DownloadCV from "../components/DownloadCV.astro";
-import Certificates from "../components/Certificates.astro";
 import Education from "../components/Education.astro";
 import Experience from "../components/Experience.astro";
 import Footer from "../components/Footer.astro";
 import Metadata from "../components/Metadata.astro";
 import Profile from "../components/Profile.astro";
 import Projects from "../components/projects/Projects.astro";
+import Section from "../components/Section.astro";
 import Skills from "../components/Skills.astro";
 import Socials from "../components/Socials.astro";
-import Section from "../components/Section.astro";
-import Card from "../components/Card.astro"; // Import Card component
 import "../styles/global.css";
 
 const { title, siteIcon } = Astro.props;
@@ -37,7 +36,7 @@ const { title, siteIcon } = Astro.props;
             >
               <Profile />
               <About />
-              <div class="flex gap-[20px] flex-wrap justify-center">
+              class="flex gap-5 flex-wrap justify-center"
                 <div class="grow">
                   <Socials />
                 </div>
